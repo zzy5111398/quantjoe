@@ -1,0 +1,19 @@
+<import src="../../templates/copyright.wxml" />
+
+<scroll-view style="height:100%;" scroll-y="true" lower-threshold="100rpx">
+    <view class="topic-common-list">
+        <block wx:key="id" wx:for="{{categoriesList}}">
+            <view class="list-item">
+              <image src="{{item.category_thumbnail_image}}" class="cover" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex">
+                <cover-view>{{item.name}}</cover-view>
+              </image>
+              <image src="../../images/{{item.subimg}}" data-subflag="{{item.subflag}}" data-id="{{item.id}}" catchtap="postsub" class="img-menu">
+              </image>
+            </view>
+        </block>
+    </view>
+</scroll-view>
+
+<view class="copyright" style="display:{{floatDisplay}}">
+    <template is="tempCopyright" />
+</view>
